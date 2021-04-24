@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+dependencies {
+    implementation('io.txcl.mingds:io.txcl.mingds:1.0.0')  {
+        version {
+            branch = 'g3-gradle-fixins'
+        }
+    }
+
+
+    testImplementation "org.junit.jupiter:junit-jupiter-params:5.5.2"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.5.2"
+    testRuntimeOnly "org.junit.platform:junit-platform-runner:1.5.2"
+}
